@@ -1,2 +1,2 @@
-# GraphQLBook
+# Book
  graphQL demo
