@@ -83,8 +83,8 @@ public class Book {
     }
 
     @Override
-    public String toSTring() {
+    public String toString() {
         return "Book{" + "id=" + id + ", title='" + title + "\'" + ", isbn=" + isbn + ", pageCount=" + pageCount + ", author="+ author +"}";
-        
+
     }
 }
