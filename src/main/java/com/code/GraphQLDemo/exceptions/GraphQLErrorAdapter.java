@@ -34,5 +34,15 @@ public class GraphQLErrorAdapter implements GraphQLError{
     public String getMessage() {
         return (error instanceof ExceptionWhileDataFetching) ? ((ExceptionWhileDataFetching) error).getException().getMessage() : error.getMessage();
     }
+
+    @Override
+    public List<Object> getPath() {
+        return error.getPath();
+    }
+
+    @Override
+    public Map<String, Object> toSpecification() {
+        return error.toSpecification();
+    }
     
 }
