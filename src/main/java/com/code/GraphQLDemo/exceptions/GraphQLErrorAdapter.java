@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import graphql.ErrorClassification;
+import graphql.ExceptionWhileDataFetching;
 import graphql.GraphQLError;
 import graphql.language.SourceLocation;
 
@@ -21,20 +22,17 @@ public class GraphQLErrorAdapter implements GraphQLError{
 
     @Override
     public ErrorClassification getErrorType() {
-        // TODO Auto-generated method stub
-        return null;
+        return error.getErrorType();
     }
 
     @Override
     public List<SourceLocation> getLocations() {
-        // TODO Auto-generated method stub
-        return null;
+        return error.getLocations();
     }
 
     @Override
     public String getMessage() {
-        // TODO Auto-generated method stub
-        return null;
+        return (error instanceof ExceptionWhileDataFetching) ? ((ExceptionWhileDataFetching) error).getException().getMessage() : error.getMessage();
     }
     
 }
