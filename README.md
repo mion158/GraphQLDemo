@@ -1,2 +1,2 @@
 # Book
- graphQL demo
+ graphQL demo on spring boot
